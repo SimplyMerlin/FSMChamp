@@ -38,8 +38,6 @@ open class StateSeries(states: List<State> = emptyList()) : StateHolder(states) 
     }
 
     override fun onUpdate() {
-        states[current].update()
-
         if((states[current].isReadyToEnd() && !states[current].frozen) || skipping) {
             if(skipping)
                 skipping = false
@@ -54,10 +52,11 @@ open class StateSeries(states: List<State> = emptyList()) : StateHolder(states) 
 
             states[current].start()
         }
+        states[current].update()
     }
 
     override fun isReadyToEnd(): Boolean {
-        return (current == states.size - 1 && states[current].isReadyToEnd())
+        return ended || (current == states.size - 1 && states[current].isReadyToEnd())
     }
 
     override fun onEnd() {
