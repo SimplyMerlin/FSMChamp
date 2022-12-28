@@ -22,9 +22,7 @@ indra {
     mitLicense()
     github("SimplyMerlin", "FSMChamp") {
         ci(true)
-        publishing(true)
     }
-    publishAllTo("github", "https://maven.pkg.github.com/SimplyMerlin/FSMChamp")
 }
 
 tasks.withType<KotlinCompile> {
