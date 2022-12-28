@@ -1,0 +1,12 @@
+name: Trigger Jitpack Build
+on:
+  release:
+    types: [ created ]
+
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Jitpack Build
+        run: curl "https://jitpack.io/com/github/SimplyMerlin/FSMChamp/${{ github.ref }}/build.log"
