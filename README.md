@@ -9,6 +9,10 @@ While using FSMgasm I've quickly fallen in love with the state-based minigame de
 - **Timer Desync**: The duration system kloon has implemented is very elegant, but because Bukkit runs on ticks instead of time, stuff tends to desync. Because of this I decided to not abstract the timer aspect of the state machine. You just specify how many ticks your state will take and the state will automatically decrease said ticks.
 - **Change Time Left**: In FSMgasm the time left is completely stuck. You cannot add or remove time. Since FSMChamp's implementation is just an integer going down, you can just add or remove from that integer all you like.
 
+## Installation
+
+Simply use the latest release from Jitpack! [![](https://jitpack.io/v/SimplyMerlin/FSMChamp.svg)](https://jitpack.io/#SimplyMerlin/FSMChamp)
+
 ## Real world usages
 
 - This framework is a modification of the framework I've battle tested in [Minestars](https://twitter.com/MineStars_). There are a few small differences, but they are mostly the same.
