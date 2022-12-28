@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.21"
-    id("net.kyori.indra") version "2.1.1"
-    id("net.kyori.indra.publishing") version "2.1.1"
-    id("net.kyori.indra.checkstyle") version "2.1.1"
+    id("net.kyori.indra") version "3.0.1"
+    id("net.kyori.indra.publishing") version "3.0.1"
+    id("net.kyori.indra.checkstyle") version "3.0.1"
 }
 
 group = "com.simplymerlin"
@@ -22,7 +22,9 @@ indra {
     mitLicense()
     github("SimplyMerlin", "FSMChamp") {
         ci(true)
+        publishing(true)
     }
+    publishAllTo("github", "https://maven.pkg.github.com/SimplyMerlin/FSMChamp")
 }
 
 tasks.withType<KotlinCompile> {
