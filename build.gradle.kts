@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.simplymerlin"
-version = "1.0.0"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -28,3 +28,6 @@ indra {
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+val signMavenPublication by tasks
+signMavenPublication.enabled = false
